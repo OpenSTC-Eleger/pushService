@@ -1,0 +1,8 @@
+pontlabbe2:
+  username: siclic_export_test
+  host: ostc-dev.siclic.fr
+  path: ~/test_ciril_export
+foo:
+  username: bar
+  host: cantina
+  path: dagoba

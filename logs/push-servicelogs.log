@@ -1,0 +1,118 @@
+Parsing customer file
+-> Ready to Work !
+-> Another work ?
+echo "execute command : scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
+Parsing customer file
+-> Ready to Work !
+Parsing customer file
+-> Ready to Work !
+Parsing customer file
+-> Ready to Work !
+[2014-01-29 14:10:51,762] DEBUG: Parsing customer file
+[2014-01-29 14:10:51,783] INFO: -> Ready to Work !
+[2014-01-29 14:11:04,281] INFO: -> Another work ?
+[2014-01-29 14:11:04,281] INFO: Trying to export files for pontlabbe2
+[2014-01-29 14:11:04,281] DEBUG: echo "execute command : scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
+[2014-01-29 14:30:01,510] DEBUG: Parsing customer file
+[2014-01-29 14:30:29,980] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 14:30:29,981] DEBUG: echo "execute command : scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
+[2014-01-29 14:30:33,518] ERROR: ./pontlabbe2/*.txt: No such file or directory
+
+[2014-01-29 14:34:40,587] DEBUG: Parsing customer file
+[2014-01-29 14:35:42,086] INFO: Starting PushService daemon
+[2014-01-29 14:35:42,087] DEBUG: Parsing customer file
+[2014-01-29 14:35:56,507] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 14:35:56,508] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
+[2014-01-29 14:36:02,909] ERROR: ./pontlabbe2/*.txt: No such file or directory
+
+[2014-01-29 14:37:34,750] INFO: Starting PushService daemon
+[2014-01-29 14:37:34,750] DEBUG: Parsing customer file
+[2014-01-29 14:38:36,960] INFO: *****Starting PushService daemon*****
+[2014-01-29 14:38:36,960] DEBUG: Parsing customer file
+[2014-01-29 14:38:46,029] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 14:38:46,029] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
+[2014-01-29 14:41:58,049] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 14:41:58,049] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
+[2014-01-29 14:44:41,769] INFO: *****Starting PushService daemon*****
+[2014-01-29 14:44:41,769] DEBUG: Parsing customer file
+[2014-01-29 14:44:52,037] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-01-29 14:44:52,037] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 14:44:52,037] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
+[2014-01-29 14:47:07,866] INFO: *****Starting PushService daemon*****
+[2014-01-29 14:47:07,866] DEBUG: Parsing customer file
+[2014-01-29 14:47:15,869] INFO: --> Received request : push .txt files for "pontlabbe2"
+[2014-01-29 14:47:15,869] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 14:47:15,870] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
+[2014-01-29 14:48:24,541] INFO: --> Received request : push .txt files for "pontlabbe2"
+[2014-01-29 14:48:24,541] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 14:48:24,541] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
+[2014-01-29 14:48:26,886] ERROR: scp: /home/siclic_export_test/test_export_ciril: Not a directory
+
+[2014-01-29 14:52:45,793] INFO: *****Starting PushService daemon*****
+[2014-01-29 14:52:45,793] DEBUG: Parsing customer file
+[2014-01-29 14:52:50,711] INFO: Received request : push .txt files for "pontlabbe2"***
+[2014-01-29 14:52:50,712] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 14:52:50,712] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export/"
+[2014-01-29 14:54:07,771] INFO: Received request : push .txt files for "pontlabbe2"***
+[2014-01-29 14:54:07,772] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 14:54:07,772] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export/"
+[2014-01-29 14:54:35,122] INFO: Received request : push .txt files for "pontlabbe2"***
+[2014-01-29 14:54:35,123] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 14:54:35,123] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export/"
+[2014-01-29 14:56:03,171] INFO: *****Starting PushService daemon*****
+[2014-01-29 14:56:03,171] DEBUG: Parsing customer file
+[2014-01-29 14:56:12,490] INFO: Received request : push .txt files for "pontlabbe2"***
+[2014-01-29 14:56:12,491] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 14:56:12,491] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-29 14:57:48,245] INFO: *****Starting PushService daemon*****
+[2014-01-29 14:57:48,245] DEBUG: Parsing customer file
+[2014-01-29 14:59:55,610] INFO: *****Starting PushService daemon*****
+[2014-01-29 14:59:55,610] DEBUG: Parsing customer file
+[2014-01-29 15:00:00,278] INFO: Received request : push .txt files for "pontlabbe2"***
+[2014-01-29 15:00:00,278] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 15:00:00,278] DEBUG: execute command : "/usr/bin/scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-29 15:03:00,272] INFO: *****Starting PushService daemon*****
+[2014-01-29 15:03:00,272] DEBUG: Parsing customer file
+[2014-01-29 15:03:04,741] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-01-29 15:03:04,741] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 15:03:04,741] DEBUG: execute command : "/usr/bin/scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-29 15:10:17,828] INFO: *****Starting PushService daemon*****
+[2014-01-29 15:10:17,828] DEBUG: Parsing customer file
+[2014-01-29 15:10:25,223] INFO: *****Starting PushService daemon*****
+[2014-01-29 15:10:25,223] DEBUG: Parsing customer file
+[2014-01-29 15:10:33,391] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-01-29 15:10:33,391] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 15:10:33,391] DEBUG: execute command : "/usr/bin/scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-29 15:13:18,733] INFO: *****Starting PushService daemon*****
+[2014-01-29 15:13:18,733] DEBUG: Parsing customer file
+[2014-01-29 15:13:24,202] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-01-29 15:13:24,202] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 15:13:24,203] DEBUG: execute command : "/usr/bin/scp /media/DATA/Bruno/workspace/tests/test_daemon.py/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-29 15:15:01,832] INFO: *****Starting PushService daemon*****
+[2014-01-29 15:15:01,832] DEBUG: Parsing customer file
+[2014-01-29 15:15:09,052] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-01-29 15:15:09,052] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 15:15:09,052] DEBUG: execute command : "/usr/bin/scp /media/DATA/Bruno/workspace/tests/test_daemon.py/../pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-29 15:18:56,125] INFO: *****Starting PushService daemon*****
+[2014-01-29 15:18:56,126] DEBUG: Parsing customer file
+[2014-01-29 15:19:02,794] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-01-29 15:19:02,794] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 15:19:02,795] DEBUG: execute command : "/usr/bin/scp /media/DATA/Bruno/workspace/tests/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-29 15:21:37,892] INFO: *****Starting PushService daemon*****
+[2014-01-29 15:21:37,892] DEBUG: Parsing customer file
+[2014-01-29 15:21:46,109] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-01-29 15:21:46,109] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 15:21:46,109] DEBUG: execute command : "scp .//pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-29 15:23:31,268] INFO: *****Starting PushService daemon*****
+[2014-01-29 15:23:31,268] DEBUG: Parsing customer file
+[2014-01-29 15:23:36,236] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-01-29 15:23:36,236] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 15:23:36,236] DEBUG: Execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-29 15:23:40,659] INFO: Success
+[2014-01-29 15:24:28,081] INFO: *****Starting PushService daemon*****
+[2014-01-29 15:24:28,081] DEBUG: Parsing customer file
+[2014-01-29 15:24:33,751] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-01-29 15:24:33,751] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 15:24:33,751] DEBUG: Execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-29 15:24:37,535] INFO: Success
+[2014-01-29 15:24:37,536] DEBUG: 

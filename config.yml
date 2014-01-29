@@ -1,0 +1,17 @@
+version: 1
+
+formatters:
+  default:
+    format: "[%(asctime)s] %(levelname)s: %(message)s"
+
+handlers:
+  file:
+    class: logging.handlers.TimedRotatingFileHandler
+    filename: logs/push-servicelogs.log
+    when: d
+    level: DEBUG
+    formatter: default
+
+root:
+  level: DEBUG
+  handlers: [file]
