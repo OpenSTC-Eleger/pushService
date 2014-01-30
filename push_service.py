@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import Pyro4
 import subprocess
 import yaml
 from yaml.error import YAMLError
@@ -7,56 +6,77 @@ import sys
 import logging
 from logging.config import dictConfig
 import os
+import daemon
+from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer 
+import urllib2
+
+
 config_path = './config.yml'
+logging_config_path = './logging_config.yml'
 customer_file_path = './customer.yml'
+customer_config = {}
 #myLogger.setLevel('debug')
 #myLogger.addHandler(logging.handlers.TimedRotatingFileHandler('logs/push-service-logs.log',when='d'))
 
 
-class PushService(object):
+class PushServiceHandler(BaseHTTPRequestHandler):
     
-    def __init__(self, customer_config):
-        self.customer_config = customer_config
+    def do_GET(self):
+        path = self.path.split('/')
+        if len(path) > 2:
+            if 'push_service' == path[1]:
+                self.push(path[2])
+            else:
+                self.send_error(404, 'resource "%s" not found' % path[1])
+        else:
+            self.send_error(400, message='You must provide at least one resource (push_service for example) and one target (siclic for example) separated by a slash')
     
     def push(self, db):
         myLogger.info('Received request : push .txt files for "%s"' % db)
-        customer = self.customer_config.get(db, None)
+        customer = customer_config.get(db, None)
         if customer:
             host = customer.get('host','')
             username = customer.get('username','')
             path = customer.get('path','')
-            local_path = '%s/%s/*.txt' % ('./repository',db)
-            cmd = ' '.join(['scp',local_path, '%s@%s:%s' % (username,host,path)])
+            local_path = '%s/%s/*.txt' % ('~/repositories',db)
+            cmd = ' '.join(['scp','-v',local_path, '%s@%s:%s' % (username,host,path)])
             myLogger.info('Trying to export files for "%s"' % db)
             myLogger.debug('Execute command : "%s"' % cmd)
             process = subprocess.Popen(cmd,shell=True,stderr=subprocess.PIPE,stdout=subprocess.PIPE)
             if process.wait() != 0:
                 myLogger.error(process.communicate()[1])
+                self.send_error(500, message="Internal error when sending files by ssh")
             else:
                 myLogger.info("Success")
-                myLogger.debug(process.communicate()[0])
+                self.send_response(200)
         else:
             myLogger.error('Error, not any customer config found for "%s"' % db)
-
+            self.send_error(404, message='Not any customer found for "%s"' % db)
 try:
-    #logging.info('-> Yes my Lord ?')
-    #logging.debug('Parsing config file')
-    config_file = open(config_path, 'r')
-    dictConfig(yaml.load(config_file))
+    #first, initialize logging configuration
+    logging_config_file = open(logging_config_path, 'r')
+    dictConfig(yaml.load(logging_config_file))
     myLogger = logging.getLogger()
-    myLogger.info('*****Starting PushService daemon*****')
+    myLogger.info('*****Initialize PushService daemon*****')
+    #then, initialize HTTP server
+    config = yaml.load(open(config_path, 'r'))
+    server = HTTPServer((config.get('servername',''),config.get('port','')), PushServiceHandler)
+    #and initialize customer configuration
     myLogger.debug('Parsing customer file')
     customer_file_path = open(customer_file_path)
-    pushService = PushService(yaml.load(customer_file_path))
-except IOError:
-    myLogger.error('could not open customer_file_path file, check if it is present')
+    customer_config = yaml.load(customer_file_path)
+except IOError as e:
+    myLogger.error('could not open yaml file, check if it is present. Error was : \n%s' % e.strerror)
     sys.exit(1)
-except YAMLError:
-    myLogger.error('error parsing customer_file_path file')
+except YAMLError as e:
+    myLogger.error('error parsing yaml file, error was: %s' % e.message)
     sys.exit(1)
-    
-daemon = Pyro4.Daemon()
-server = Pyro4.locateNS()
-uri = daemon.register(pushService, "pushService")
-server.register('pushService',uri)
-daemon.requestLoop()
+
+
+daemon_context = daemon.DaemonContext()
+#we preserve socket file of the http server
+daemon_context.files_preserve = [server.fileno()]
+#finally, launch daemon and launch http server
+#with daemon_context:
+myLogger.info('*****Launching PushService daemon*****')
+server.serve_forever()

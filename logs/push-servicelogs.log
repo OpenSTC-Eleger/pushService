@@ -116,3 +116,81 @@ Parsing customer file
 [2014-01-29 15:24:33,751] DEBUG: Execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
 [2014-01-29 15:24:37,535] INFO: Success
 [2014-01-29 15:24:37,536] DEBUG: 
+[2014-01-29 16:23:18,734] INFO: *****Starting PushService daemon*****
+[2014-01-29 16:23:18,734] DEBUG: Parsing customer file
+[2014-01-29 16:48:47,044] INFO: *****Starting PushService daemon*****
+[2014-01-29 16:48:47,044] DEBUG: Parsing customer file
+[2014-01-29 16:49:31,572] INFO: *****Starting PushService daemon*****
+[2014-01-29 16:49:31,572] DEBUG: Parsing customer file
+[2014-01-29 17:11:35,274] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-01-29 17:11:35,274] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 17:11:35,275] DEBUG: Execute command : "scp ~/repository/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-29 17:14:05,563] INFO: *****Starting PushService daemon*****
+[2014-01-29 17:14:05,564] DEBUG: Parsing customer file
+[2014-01-29 17:14:13,832] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-01-29 17:14:13,832] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 17:14:13,832] DEBUG: Execute command : "scp ~/repositories/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-29 17:15:15,519] INFO: *****Starting PushService daemon*****
+[2014-01-29 17:15:15,519] DEBUG: Parsing customer file
+[2014-01-29 17:15:26,490] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-01-29 17:15:26,490] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 17:15:26,490] DEBUG: Execute command : "scp -v ~/repositories/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-29 17:22:14,676] INFO: *****Starting PushService daemon*****
+[2014-01-29 17:22:14,676] DEBUG: Parsing customer file
+[2014-01-29 17:22:18,198] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-01-29 17:22:18,198] INFO: Trying to export files for "pontlabbe2"
+[2014-01-29 17:22:18,198] DEBUG: Execute command : "scp -v ~/repositories/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-29 17:22:20,034] INFO: Success
+[2014-01-29 17:22:20,034] DEBUG: 
+[2014-01-30 11:17:10,228] INFO: *****Starting PushService daemon*****
+[2014-01-30 11:18:08,746] INFO: *****Starting PushService daemon*****
+[2014-01-30 11:18:08,747] DEBUG: Parsing customer file
+[2014-01-30 11:18:50,721] INFO: *****Starting PushService daemon*****
+[2014-01-30 11:18:50,722] ERROR: could not open customer_file_path file, check if it is present
+[2014-01-30 11:20:45,263] INFO: *****Starting PushService daemon*****
+[2014-01-30 11:20:45,264] ERROR: could not open yaml file, check if it is present. Error was : 
+Address already in use
+[2014-01-30 11:22:03,381] INFO: *****Starting PushService daemon*****
+[2014-01-30 11:22:03,382] DEBUG: Parsing customer file
+[2014-01-30 11:24:09,950] INFO: *****Initialize PushService daemon*****
+[2014-01-30 11:24:09,951] ERROR: could not open yaml file, check if it is present. Error was : 
+Address already in use
+[2014-01-30 11:24:42,588] INFO: *****Initialize PushService daemon*****
+[2014-01-30 11:24:42,589] ERROR: could not open yaml file, check if it is present. Error was : 
+Address already in use
+[2014-01-30 11:26:04,760] INFO: *****Initialize PushService daemon*****
+[2014-01-30 11:26:04,761] DEBUG: Parsing customer file
+[2014-01-30 11:28:12,670] INFO: *****Initialize PushService daemon*****
+[2014-01-30 11:28:12,671] ERROR: could not open yaml file, check if it is present. Error was : 
+Address already in use
+[2014-01-30 11:28:56,253] INFO: *****Initialize PushService daemon*****
+[2014-01-30 11:28:56,254] DEBUG: Parsing customer file
+[2014-01-30 11:28:56,256] INFO: *****Launching PushService daemon*****
+[2014-01-30 11:31:29,593] INFO: *****Initialize PushService daemon*****
+[2014-01-30 11:31:29,594] DEBUG: Parsing customer file
+[2014-01-30 11:31:29,595] INFO: *****Launching PushService daemon*****
+[2014-01-30 11:38:51,831] INFO: *****Initialize PushService daemon*****
+[2014-01-30 11:38:51,832] DEBUG: Parsing customer file
+[2014-01-30 11:38:51,833] INFO: *****Launching PushService daemon*****
+[2014-01-30 11:50:01,053] INFO: *****Initialize PushService daemon*****
+[2014-01-30 11:50:01,054] DEBUG: Parsing customer file
+[2014-01-30 11:50:01,056] INFO: *****Launching PushService daemon*****
+[2014-01-30 11:51:06,651] INFO: *****Initialize PushService daemon*****
+[2014-01-30 11:51:06,652] DEBUG: Parsing customer file
+[2014-01-30 11:51:06,653] INFO: *****Launching PushService daemon*****
+[2014-01-30 11:54:43,726] INFO: *****Initialize PushService daemon*****
+[2014-01-30 11:54:43,728] DEBUG: Parsing customer file
+[2014-01-30 11:54:43,729] INFO: *****Launching PushService daemon*****
+[2014-01-30 11:56:14,125] INFO: *****Initialize PushService daemon*****
+[2014-01-30 11:56:14,126] DEBUG: Parsing customer file
+[2014-01-30 11:56:14,127] INFO: *****Launching PushService daemon*****
+[2014-01-30 11:58:43,429] INFO: *****Initialize PushService daemon*****
+[2014-01-30 11:58:43,430] DEBUG: Parsing customer file
+[2014-01-30 11:58:43,434] INFO: *****Launching PushService daemon*****
+[2014-01-30 11:59:00,894] INFO: Received request : push .txt files for "siclic"
+[2014-01-30 11:59:00,895] ERROR: Error, not any customer config found for "siclic"
+[2014-01-30 11:59:19,726] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-01-30 11:59:19,726] INFO: Trying to export files for "pontlabbe2"
+[2014-01-30 11:59:19,726] DEBUG: Execute command : "scp -v ~/repositories/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-30 11:59:25,237] INFO: Success
+[2014-01-30 11:59:25,238] DEBUG: 
