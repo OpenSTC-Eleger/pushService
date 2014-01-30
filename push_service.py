@@ -8,7 +8,7 @@ from logging.config import dictConfig
 import os
 import daemon
 from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer 
-import urllib2
+
 
 
 config_path = './config.yml'
@@ -17,7 +17,6 @@ customer_file_path = './customer.yml'
 customer_config = {}
 #myLogger.setLevel('debug')
 #myLogger.addHandler(logging.handlers.TimedRotatingFileHandler('logs/push-service-logs.log',when='d'))
-
 
 class PushServiceHandler(BaseHTTPRequestHandler):
     
@@ -77,6 +76,7 @@ daemon_context = daemon.DaemonContext()
 #we preserve socket file of the http server
 daemon_context.files_preserve = [server.fileno()]
 #finally, launch daemon and launch http server
+
 #with daemon_context:
 myLogger.info('*****Launching PushService daemon*****')
 server.serve_forever()

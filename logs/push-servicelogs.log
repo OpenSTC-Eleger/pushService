@@ -194,3 +194,22 @@ Address already in use
 [2014-01-30 11:59:19,726] DEBUG: Execute command : "scp -v ~/repositories/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
 [2014-01-30 11:59:25,237] INFO: Success
 [2014-01-30 11:59:25,238] DEBUG: 
+[2014-01-30 12:30:08,897] INFO: *****Initialize PushService daemon*****
+[2014-01-30 12:30:08,898] DEBUG: Parsing customer file
+[2014-01-30 12:30:08,900] INFO: *****Launching PushService daemon*****
+[2014-01-30 12:30:52,595] INFO: Received request : push .txt files for "test"
+[2014-01-30 12:30:52,595] ERROR: Error, not any customer config found for "test"
+[2014-01-30 12:32:50,034] INFO: *****Initialize PushService daemon*****
+[2014-01-30 12:32:50,035] DEBUG: Parsing customer file
+[2014-01-30 12:32:50,037] INFO: *****Launching PushService daemon*****
+[2014-01-30 12:33:26,914] INFO: Received request : push .txt files for "test"
+[2014-01-30 12:33:26,914] ERROR: Error, not any customer config found for "test"
+[2014-01-30 12:33:41,336] INFO: Received request : push .txt files for "test2"
+[2014-01-30 12:33:41,337] ERROR: Error, not any customer config found for "test2"
+[2014-01-30 13:43:51,794] INFO: *****Initialize PushService daemon*****
+[2014-01-30 13:43:51,795] DEBUG: Parsing customer file
+[2014-01-30 13:43:51,797] INFO: *****Launching PushService daemon*****
+[2014-01-30 13:44:00,231] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-01-30 13:44:00,231] INFO: Trying to export files for "pontlabbe2"
+[2014-01-30 13:44:00,231] DEBUG: Execute command : "scp -v ~/repositories/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-01-30 13:44:02,339] INFO: Success
