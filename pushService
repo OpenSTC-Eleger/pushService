@@ -16,13 +16,12 @@
 PATH=/sbin:/usr/sbin:/bin:/usr/bin
 DESC="PushService Daemon"
 NAME=pushService
-DAEMON=/usr/sbin/$NAME
+DAEMON_PATH=/srv/openerp/push_service
+DAEMON="python $DAEMON_PATH/push_service.py"
 PIDFILE=/var/run/$NAME.pid
 SCRIPTNAME=/etc/init.d/$NAME
-CHUID=push_service
-
-# Exit if the package is not installed
-[ -x "$DAEMON" ] || exit 0
+CHUID=nonow_export_test
+LOG=$DAEMON_PATH/http_logs.log
 
 # Read configuration variable file if it is present
 [ -r /etc/default/$NAME ] && . /etc/default/$NAME
@@ -43,15 +42,17 @@ do_start()
 	# Return
 	#   0 if daemon has been started
 	#   1 if daemon was already running
-	#   2 if daemon could not be started
-	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON --test > /dev/null \
-		|| return 1
-	start-stop-daemon --start --quiet --pidfile $PIDFILE --exec $DAEMON -- \
-		$DAEMON_ARGS \
-		|| return 2
-	# Add code here, if necessary, that waits for the process to be ready
-	# to handle requests from services started subsequently which depend
-	# on this one.  As a last resort, sleep for some time.
+	#   2 if daemon could not be 
+	echo "***Starting $NAME***"
+	if [ ! -s $PIDFILE ]; then
+		touch $PIDFILE
+		chown $CHUID $PIDFILE
+	fi
+
+	
+	su - $CHUID -s /bin/bash -c "$DAEMON &> $LOG &"
+	echo "$NAME started !"
+	return 0
 }
 
 #
@@ -59,25 +60,16 @@ do_start()
 #
 do_stop()
 {
-	# Return
-	#   0 if daemon has been stopped
-	#   1 if daemon was already stopped
-	#   2 if daemon could not be stopped
-	#   other if a failure occurred
-	start-stop-daemon --stop --quiet --retry=TERM/30/KILL/5 --pidfile $PIDFILE --name $NAME
-	RETVAL="$?"
-	[ "$RETVAL" = 2 ] && return 2
-	# Wait for children to finish too if this is a daemon that forks
-	# and if the daemon is only ever run from this initscript.
-	# If the above conditions are not satisfied then add some other code
-	# that waits for the process to drop all resources that could be
-	# needed by services started subsequently.  A last resort is to
-	# sleep for some time.
-	start-stop-daemon --stop --quiet --oknodo --retry=0/30/KILL/5 --exec $DAEMON
-	[ "$?" = 2 ] && return 2
-	# Many daemons don't delete their pidfiles when they exit.
-	rm -f $PIDFILE
-	return "$RETVAL"
+	echo "***Stopping $NAME***"
+	if [ ! -s $PIDFILE ]; then
+		echo "$NAME already stopped"		
+		return 1
+	fi
+	
+	kill -9 `cat $PIDFILE`
+	
+	echo "$NAME stopped"
+	return 0
 }
 
 #
@@ -89,7 +81,7 @@ do_reload() {
 	# restarting (for example, when it is sent a SIGHUP),
 	# then implement that here.
 	#
-	start-stop-daemon --stop --signal 1 --quiet --pidfile $PIDFILE --name $NAME
+
 	return 0
 }
 
