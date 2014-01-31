@@ -7,7 +7,7 @@ formatters:
 handlers:
   file:
     class: logging.handlers.TimedRotatingFileHandler
-    filename: logs/push-servicelogs.log
+    filename: ./logs/push-servicelogs.log
     when: d
     level: DEBUG
     formatter: default

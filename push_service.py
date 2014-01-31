@@ -8,15 +8,13 @@ from logging.config import dictConfig
 import os
 import daemon
 from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer 
-
+from daemon.pidlockfile import TimeoutPIDLockFile
 
 
 config_path = './config.yml'
 logging_config_path = './logging_config.yml'
 customer_file_path = './customer.yml'
 customer_config = {}
-#myLogger.setLevel('debug')
-#myLogger.addHandler(logging.handlers.TimedRotatingFileHandler('logs/push-service-logs.log',when='d'))
 
 class PushServiceHandler(BaseHTTPRequestHandler):
     
@@ -51,32 +49,23 @@ class PushServiceHandler(BaseHTTPRequestHandler):
         else:
             myLogger.error('Error, not any customer config found for "%s"' % db)
             self.send_error(404, message='Not any customer found for "%s"' % db)
-try:
-    #first, initialize logging configuration
-    logging_config_file = open(logging_config_path, 'r')
-    dictConfig(yaml.load(logging_config_file))
-    myLogger = logging.getLogger()
-    myLogger.info('*****Initialize PushService daemon*****')
-    #then, initialize HTTP server
-    config = yaml.load(open(config_path, 'r'))
-    server = HTTPServer((config.get('servername',''),config.get('port','')), PushServiceHandler)
-    #and initialize customer configuration
-    myLogger.debug('Parsing customer file')
-    customer_file_path = open(customer_file_path)
-    customer_config = yaml.load(customer_file_path)
-except IOError as e:
-    myLogger.error('could not open yaml file, check if it is present. Error was : \n%s' % e.strerror)
-    sys.exit(1)
-except YAMLError as e:
-    myLogger.error('error parsing yaml file, error was: %s' % e.message)
-    sys.exit(1)
+#try:
+#first, initialize logging configuration
+logging_config_file = open(logging_config_path, 'r')
+dictConfig(yaml.load(logging_config_file))
+myLogger = logging.getLogger()
+myLogger.info('*****Initialize PushService daemon*****')
 
+#then, initialize HTTP server
+config = yaml.load(open(config_path, 'r'))
+server = HTTPServer((config.get('servername',''),config.get('port','')), PushServiceHandler)
+#and initialize customer configuration
+myLogger.debug('Parsing customer file')
+customer_file_path = open(customer_file_path)
+customer_config = yaml.load(customer_file_path)
 
-daemon_context = daemon.DaemonContext()
-#we preserve socket file of the http server
-daemon_context.files_preserve = [server.fileno()]
-#finally, launch daemon and launch http server
-
-#with daemon_context:
+pidfile = open('/var/run/pushService.pid', 'w')
+pidfile.write(str(os.getpid()))
+pidfile.close()
 myLogger.info('*****Launching PushService daemon*****')
 server.serve_forever()
