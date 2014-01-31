@@ -48,7 +48,10 @@ do_start()
 		touch $PIDFILE
 		chown $CHUID $PIDFILE
 	fi
-
+	if [ ! -s $LOG ]; then
+		touch $LOG
+		chown $CHUID $LOG
+	fi
 	
 	su - $CHUID -s /bin/bash -c "$DAEMON &> $LOG &"
 	echo "$NAME started !"

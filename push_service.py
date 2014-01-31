@@ -6,9 +6,7 @@ import sys
 import logging
 from logging.config import dictConfig
 import os
-import daemon
 from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer 
-from daemon.pidlockfile import TimeoutPIDLockFile
 
 
 config_path = './config.yml'
