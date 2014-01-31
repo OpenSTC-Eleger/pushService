@@ -48,8 +48,8 @@ class PushServiceHandler(BaseHTTPRequestHandler):
                 self.send_response(200)
         else:
             myLogger.error('Error, not any customer config found for "%s"' % db)
-            self.send_error(404, message='Not any customer found for "%s"' % db)
-#try:
+            self.send_error(404, message='Not any customer repository found for "%s"' % db)
+
 #first, initialize logging configuration
 logging_config_file = open(logging_config_path, 'r')
 dictConfig(yaml.load(logging_config_file))
@@ -59,11 +59,13 @@ myLogger.info('*****Initialize PushService daemon*****')
 #then, initialize HTTP server
 config = yaml.load(open(config_path, 'r'))
 server = HTTPServer((config.get('servername',''),config.get('port','')), PushServiceHandler)
-#and initialize customer configuration
-myLogger.debug('Parsing customer file')
-customer_file_path = open(customer_file_path)
-customer_config = yaml.load(customer_file_path)
 
+#and initialize customer configuration
+myLogger.debug('*****Parsing customer file*****')
+customer_file = open(customer_file_path)
+customer_config = yaml.load(customer_file)
+
+#I write PID on the .pid file to be usable as service
 pidfile = open('/var/run/pushService.pid', 'w')
 pidfile.write(str(os.getpid()))
 pidfile.close()
