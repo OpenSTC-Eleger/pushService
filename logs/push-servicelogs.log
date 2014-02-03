@@ -1,349 +1,290 @@
-Parsing customer file
--> Ready to Work !
--> Another work ?
-echo "execute command : scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
-Parsing customer file
--> Ready to Work !
-Parsing customer file
--> Ready to Work !
-Parsing customer file
--> Ready to Work !
-[2014-01-29 14:10:51,762] DEBUG: Parsing customer file
-[2014-01-29 14:10:51,783] INFO: -> Ready to Work !
-[2014-01-29 14:11:04,281] INFO: -> Another work ?
-[2014-01-29 14:11:04,281] INFO: Trying to export files for pontlabbe2
-[2014-01-29 14:11:04,281] DEBUG: echo "execute command : scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
-[2014-01-29 14:30:01,510] DEBUG: Parsing customer file
-[2014-01-29 14:30:29,980] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 14:30:29,981] DEBUG: echo "execute command : scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
-[2014-01-29 14:30:33,518] ERROR: ./pontlabbe2/*.txt: No such file or directory
+[2014-02-03 09:39:45,429] INFO: *****Initialize PushService daemon*****
+[2014-02-03 09:39:45,431] DEBUG: *****Parsing customer file*****
+[2014-02-03 09:39:45,433] INFO: *****Launching PushService daemon*****
+[2014-02-03 09:39:48,974] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-02-03 09:39:48,974] INFO: Trying to export files for "pontlabbe2"
+[2014-02-03 09:39:48,974] DEBUG: Execute command : "scp -v ~/repositories/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-02-03 09:39:49,408] ERROR: Executing: program /usr/bin/ssh host ostc-dev.siclic.fr, user siclic_export_test, command scp -v -d -t ~/test_ciril_export
+OpenSSH_6.0p1 Debian-3ubuntu1, OpenSSL 1.0.1c 10 May 2012
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: Connecting to ostc-dev.siclic.fr [37.187.66.96] port 22.
+debug1: Connection established.
+debug1: identity file /srv/openerp/push_service/.ssh/id_rsa type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_rsa-cert type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_dsa type 2
+debug1: Checking blacklist file /usr/share/ssh/blacklist.DSA-1024
+debug1: Checking blacklist file /etc/ssh/blacklist.DSA-1024
+debug1: identity file /srv/openerp/push_service/.ssh/id_dsa-cert type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_ecdsa type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_ecdsa-cert type -1
+debug1: Remote protocol version 2.0, remote software version OpenSSH_5.9p1 Debian-5ubuntu1.1
+debug1: match: OpenSSH_5.9p1 Debian-5ubuntu1.1 pat OpenSSH_5*
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_6.0p1 Debian-3ubuntu1
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: server->client aes128-ctr hmac-md5 none
+debug1: kex: client->server aes128-ctr hmac-md5 none
+debug1: sending SSH2_MSG_KEX_ECDH_INIT
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ECDSA 9e:bf:25:64:88:a6:05:fa:f4:62:51:83:e8:d1:32:60
+debug1: Host 'ostc-dev.siclic.fr' is known and matches the ECDSA host key.
+debug1: Found key in /srv/openerp/push_service/.ssh/known_hosts:1
+debug1: ssh_ecdsa_verify: signature correct
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: Roaming not allowed by server
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey,password
+debug1: Next authentication method: publickey
+debug1: Trying private key: /srv/openerp/push_service/.ssh/id_rsa
+debug1: Offering DSA public key: /srv/openerp/push_service/.ssh/id_dsa
+debug1: Authentications that can continue: publickey,password
+debug1: Trying private key: /srv/openerp/push_service/.ssh/id_ecdsa
+debug1: Next authentication method: password
+debug1: Authentications that can continue: publickey,password
+Permission denied, please try again.
+debug1: Authentications that can continue: publickey,password
+Permission denied, please try again.
+debug1: Authentications that can continue: publickey,password
+debug1: No more authentication methods to try.
+Permission denied (publickey,password).
+lost connection
 
-[2014-01-29 14:34:40,587] DEBUG: Parsing customer file
-[2014-01-29 14:35:42,086] INFO: Starting PushService daemon
-[2014-01-29 14:35:42,087] DEBUG: Parsing customer file
-[2014-01-29 14:35:56,507] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 14:35:56,508] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
-[2014-01-29 14:36:02,909] ERROR: ./pontlabbe2/*.txt: No such file or directory
+[2014-02-03 10:18:34,121] INFO: *****Initialize PushService daemon*****
+[2014-02-03 10:18:34,122] DEBUG: *****Parsing customer file*****
+[2014-02-03 10:18:34,123] INFO: *****Launching PushService daemon*****
+[2014-02-03 10:19:24,721] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-02-03 10:19:24,721] INFO: Trying to export files for "pontlabbe2"
+[2014-02-03 10:19:24,721] DEBUG: Execute command : "scp -v ~/repositories/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
+[2014-02-03 10:19:25,214] ERROR: Executing: program /usr/bin/ssh host ostc-dev.siclic.fr, user siclic_export_test, command scp -v -d -t ~/test_ciril_export
+OpenSSH_6.0p1 Debian-3ubuntu1, OpenSSL 1.0.1c 10 May 2012
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: Connecting to ostc-dev.siclic.fr [37.187.66.96] port 22.
+debug1: Connection established.
+debug1: identity file /srv/openerp/push_service/.ssh/id_rsa type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_rsa-cert type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_dsa type 2
+debug1: Checking blacklist file /usr/share/ssh/blacklist.DSA-1024
+debug1: Checking blacklist file /etc/ssh/blacklist.DSA-1024
+debug1: identity file /srv/openerp/push_service/.ssh/id_dsa-cert type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_ecdsa type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_ecdsa-cert type -1
+debug1: Remote protocol version 2.0, remote software version OpenSSH_5.9p1 Debian-5ubuntu1.1
+debug1: match: OpenSSH_5.9p1 Debian-5ubuntu1.1 pat OpenSSH_5*
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_6.0p1 Debian-3ubuntu1
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: server->client aes128-ctr hmac-md5 none
+debug1: kex: client->server aes128-ctr hmac-md5 none
+debug1: sending SSH2_MSG_KEX_ECDH_INIT
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ECDSA 9e:bf:25:64:88:a6:05:fa:f4:62:51:83:e8:d1:32:60
+debug1: Host 'ostc-dev.siclic.fr' is known and matches the ECDSA host key.
+debug1: Found key in /srv/openerp/push_service/.ssh/known_hosts:1
+debug1: ssh_ecdsa_verify: signature correct
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: Roaming not allowed by server
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey,password
+debug1: Next authentication method: publickey
+debug1: Trying private key: /srv/openerp/push_service/.ssh/id_rsa
+debug1: Offering DSA public key: /srv/openerp/push_service/.ssh/id_dsa
+debug1: Authentications that can continue: publickey,password
+debug1: Trying private key: /srv/openerp/push_service/.ssh/id_ecdsa
+debug1: Next authentication method: password
+debug1: Authentications that can continue: publickey,password
+Permission denied, please try again.
+debug1: Authentications that can continue: publickey,password
+Permission denied, please try again.
+debug1: Authentications that can continue: publickey,password
+debug1: No more authentication methods to try.
+Permission denied (publickey,password).
+lost connection
 
-[2014-01-29 14:37:34,750] INFO: Starting PushService daemon
-[2014-01-29 14:37:34,750] DEBUG: Parsing customer file
-[2014-01-29 14:38:36,960] INFO: *****Starting PushService daemon*****
-[2014-01-29 14:38:36,960] DEBUG: Parsing customer file
-[2014-01-29 14:38:46,029] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 14:38:46,029] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
-[2014-01-29 14:41:58,049] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 14:41:58,049] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
-[2014-01-29 14:44:41,769] INFO: *****Starting PushService daemon*****
-[2014-01-29 14:44:41,769] DEBUG: Parsing customer file
-[2014-01-29 14:44:52,037] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-29 14:44:52,037] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 14:44:52,037] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
-[2014-01-29 14:47:07,866] INFO: *****Starting PushService daemon*****
-[2014-01-29 14:47:07,866] DEBUG: Parsing customer file
-[2014-01-29 14:47:15,869] INFO: --> Received request : push .txt files for "pontlabbe2"
-[2014-01-29 14:47:15,869] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 14:47:15,870] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
-[2014-01-29 14:48:24,541] INFO: --> Received request : push .txt files for "pontlabbe2"
-[2014-01-29 14:48:24,541] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 14:48:24,541] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_export_ciril"
-[2014-01-29 14:48:26,886] ERROR: scp: /home/siclic_export_test/test_export_ciril: Not a directory
+[2014-02-03 11:02:10,709] INFO: *****Initialize PushService daemon*****
+[2014-02-03 11:02:10,710] DEBUG: *****Parsing customer file*****
+[2014-02-03 11:02:10,712] INFO: *****Launching PushService daemon*****
+[2014-02-03 11:02:35,270] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-02-03 11:03:25,307] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-02-03 11:04:45,648] INFO: *****Initialize PushService daemon*****
+[2014-02-03 11:04:45,649] DEBUG: *****Parsing customer file*****
+[2014-02-03 11:04:45,651] INFO: *****Launching PushService daemon*****
+[2014-02-03 11:04:48,629] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-02-03 11:04:48,629] INFO: Trying to export files for "pontlabbe2"
+[2014-02-03 11:04:48,629] DEBUG: Execute command : "scp -v repositories/pontlabbe2/todo/BC-VOI_2013-07-26_0027.txt repositories/pontlabbe2/todo/export2.txt repositories/pontlabbe2/todo/export1.txt nonow@localhost:~/test_ciril_export"
+[2014-02-03 11:04:48,834] INFO: Success
+[2014-02-03 12:30:31,139] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-02-03 12:30:31,139] INFO: Trying to export files for "pontlabbe2"
+[2014-02-03 12:30:31,140] DEBUG: Execute command : "scp -v repositories/pontlabbe2/todo/BC-VOI_2013-07-26_0027.txt repositories/pontlabbe2/todo/export2.txt repositories/pontlabbe2/todo/export1.txt nonow@localhost:~/test_ciril_export"
+[2014-02-03 12:30:31,218] ERROR: Executing: program /usr/bin/ssh host localhost, user nonow, command scp -v -d -t ~/test_ciril_export
+OpenSSH_6.0p1 Debian-3ubuntu1, OpenSSL 1.0.1c 10 May 2012
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: Connecting to localhost [127.0.0.1] port 22.
+debug1: Connection established.
+debug1: identity file /srv/openerp/push_service/.ssh/id_rsa type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_rsa-cert type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_dsa type 2
+debug1: Checking blacklist file /usr/share/ssh/blacklist.DSA-1024
+debug1: Checking blacklist file /etc/ssh/blacklist.DSA-1024
+debug1: identity file /srv/openerp/push_service/.ssh/id_dsa-cert type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_ecdsa type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_ecdsa-cert type -1
+debug1: Remote protocol version 2.0, remote software version OpenSSH_6.0p1 Debian-3ubuntu1
+debug1: match: OpenSSH_6.0p1 Debian-3ubuntu1 pat OpenSSH*
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_6.0p1 Debian-3ubuntu1
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: server->client aes128-ctr hmac-md5 none
+debug1: kex: client->server aes128-ctr hmac-md5 none
+debug1: sending SSH2_MSG_KEX_ECDH_INIT
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ECDSA 54:d0:b6:2e:e5:64:aa:0e:ff:06:7e:f8:ea:cc:57:70
+debug1: Host 'localhost' is known and matches the ECDSA host key.
+debug1: Found key in /srv/openerp/push_service/.ssh/known_hosts:3
+debug1: ssh_ecdsa_verify: signature correct
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: Roaming not allowed by server
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey,password
+debug1: Next authentication method: publickey
+debug1: Trying private key: /srv/openerp/push_service/.ssh/id_rsa
+debug1: Offering DSA public key: /srv/openerp/push_service/.ssh/id_dsa
+debug1: Authentications that can continue: publickey,password
+debug1: Trying private key: /srv/openerp/push_service/.ssh/id_ecdsa
+debug1: Next authentication method: password
+debug1: Authentications that can continue: publickey,password
+Permission denied, please try again.
+debug1: Authentications that can continue: publickey,password
+Permission denied, please try again.
+debug1: Authentications that can continue: publickey,password
+debug1: No more authentication methods to try.
+Permission denied (publickey,password).
+lost connection
 
-[2014-01-29 14:52:45,793] INFO: *****Starting PushService daemon*****
-[2014-01-29 14:52:45,793] DEBUG: Parsing customer file
-[2014-01-29 14:52:50,711] INFO: Received request : push .txt files for "pontlabbe2"***
-[2014-01-29 14:52:50,712] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 14:52:50,712] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export/"
-[2014-01-29 14:54:07,771] INFO: Received request : push .txt files for "pontlabbe2"***
-[2014-01-29 14:54:07,772] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 14:54:07,772] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export/"
-[2014-01-29 14:54:35,122] INFO: Received request : push .txt files for "pontlabbe2"***
-[2014-01-29 14:54:35,123] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 14:54:35,123] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export/"
-[2014-01-29 14:56:03,171] INFO: *****Starting PushService daemon*****
-[2014-01-29 14:56:03,171] DEBUG: Parsing customer file
-[2014-01-29 14:56:12,490] INFO: Received request : push .txt files for "pontlabbe2"***
-[2014-01-29 14:56:12,491] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 14:56:12,491] DEBUG: execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-29 14:57:48,245] INFO: *****Starting PushService daemon*****
-[2014-01-29 14:57:48,245] DEBUG: Parsing customer file
-[2014-01-29 14:59:55,610] INFO: *****Starting PushService daemon*****
-[2014-01-29 14:59:55,610] DEBUG: Parsing customer file
-[2014-01-29 15:00:00,278] INFO: Received request : push .txt files for "pontlabbe2"***
-[2014-01-29 15:00:00,278] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 15:00:00,278] DEBUG: execute command : "/usr/bin/scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-29 15:03:00,272] INFO: *****Starting PushService daemon*****
-[2014-01-29 15:03:00,272] DEBUG: Parsing customer file
-[2014-01-29 15:03:04,741] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-29 15:03:04,741] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 15:03:04,741] DEBUG: execute command : "/usr/bin/scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-29 15:10:17,828] INFO: *****Starting PushService daemon*****
-[2014-01-29 15:10:17,828] DEBUG: Parsing customer file
-[2014-01-29 15:10:25,223] INFO: *****Starting PushService daemon*****
-[2014-01-29 15:10:25,223] DEBUG: Parsing customer file
-[2014-01-29 15:10:33,391] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-29 15:10:33,391] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 15:10:33,391] DEBUG: execute command : "/usr/bin/scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-29 15:13:18,733] INFO: *****Starting PushService daemon*****
-[2014-01-29 15:13:18,733] DEBUG: Parsing customer file
-[2014-01-29 15:13:24,202] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-29 15:13:24,202] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 15:13:24,203] DEBUG: execute command : "/usr/bin/scp /media/DATA/Bruno/workspace/tests/test_daemon.py/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-29 15:15:01,832] INFO: *****Starting PushService daemon*****
-[2014-01-29 15:15:01,832] DEBUG: Parsing customer file
-[2014-01-29 15:15:09,052] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-29 15:15:09,052] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 15:15:09,052] DEBUG: execute command : "/usr/bin/scp /media/DATA/Bruno/workspace/tests/test_daemon.py/../pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-29 15:18:56,125] INFO: *****Starting PushService daemon*****
-[2014-01-29 15:18:56,126] DEBUG: Parsing customer file
-[2014-01-29 15:19:02,794] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-29 15:19:02,794] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 15:19:02,795] DEBUG: execute command : "/usr/bin/scp /media/DATA/Bruno/workspace/tests/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-29 15:21:37,892] INFO: *****Starting PushService daemon*****
-[2014-01-29 15:21:37,892] DEBUG: Parsing customer file
-[2014-01-29 15:21:46,109] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-29 15:21:46,109] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 15:21:46,109] DEBUG: execute command : "scp .//pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-29 15:23:31,268] INFO: *****Starting PushService daemon*****
-[2014-01-29 15:23:31,268] DEBUG: Parsing customer file
-[2014-01-29 15:23:36,236] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-29 15:23:36,236] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 15:23:36,236] DEBUG: Execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-29 15:23:40,659] INFO: Success
-[2014-01-29 15:24:28,081] INFO: *****Starting PushService daemon*****
-[2014-01-29 15:24:28,081] DEBUG: Parsing customer file
-[2014-01-29 15:24:33,751] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-29 15:24:33,751] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 15:24:33,751] DEBUG: Execute command : "scp ./pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-29 15:24:37,535] INFO: Success
-[2014-01-29 15:24:37,536] DEBUG: 
-[2014-01-29 16:23:18,734] INFO: *****Starting PushService daemon*****
-[2014-01-29 16:23:18,734] DEBUG: Parsing customer file
-[2014-01-29 16:48:47,044] INFO: *****Starting PushService daemon*****
-[2014-01-29 16:48:47,044] DEBUG: Parsing customer file
-[2014-01-29 16:49:31,572] INFO: *****Starting PushService daemon*****
-[2014-01-29 16:49:31,572] DEBUG: Parsing customer file
-[2014-01-29 17:11:35,274] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-29 17:11:35,274] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 17:11:35,275] DEBUG: Execute command : "scp ~/repository/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-29 17:14:05,563] INFO: *****Starting PushService daemon*****
-[2014-01-29 17:14:05,564] DEBUG: Parsing customer file
-[2014-01-29 17:14:13,832] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-29 17:14:13,832] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 17:14:13,832] DEBUG: Execute command : "scp ~/repositories/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-29 17:15:15,519] INFO: *****Starting PushService daemon*****
-[2014-01-29 17:15:15,519] DEBUG: Parsing customer file
-[2014-01-29 17:15:26,490] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-29 17:15:26,490] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 17:15:26,490] DEBUG: Execute command : "scp -v ~/repositories/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-29 17:22:14,676] INFO: *****Starting PushService daemon*****
-[2014-01-29 17:22:14,676] DEBUG: Parsing customer file
-[2014-01-29 17:22:18,198] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-29 17:22:18,198] INFO: Trying to export files for "pontlabbe2"
-[2014-01-29 17:22:18,198] DEBUG: Execute command : "scp -v ~/repositories/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-29 17:22:20,034] INFO: Success
-[2014-01-29 17:22:20,034] DEBUG: 
-[2014-01-30 11:17:10,228] INFO: *****Starting PushService daemon*****
-[2014-01-30 11:18:08,746] INFO: *****Starting PushService daemon*****
-[2014-01-30 11:18:08,747] DEBUG: Parsing customer file
-[2014-01-30 11:18:50,721] INFO: *****Starting PushService daemon*****
-[2014-01-30 11:18:50,722] ERROR: could not open customer_file_path file, check if it is present
-[2014-01-30 11:20:45,263] INFO: *****Starting PushService daemon*****
-[2014-01-30 11:20:45,264] ERROR: could not open yaml file, check if it is present. Error was : 
-Address already in use
-[2014-01-30 11:22:03,381] INFO: *****Starting PushService daemon*****
-[2014-01-30 11:22:03,382] DEBUG: Parsing customer file
-[2014-01-30 11:24:09,950] INFO: *****Initialize PushService daemon*****
-[2014-01-30 11:24:09,951] ERROR: could not open yaml file, check if it is present. Error was : 
-Address already in use
-[2014-01-30 11:24:42,588] INFO: *****Initialize PushService daemon*****
-[2014-01-30 11:24:42,589] ERROR: could not open yaml file, check if it is present. Error was : 
-Address already in use
-[2014-01-30 11:26:04,760] INFO: *****Initialize PushService daemon*****
-[2014-01-30 11:26:04,761] DEBUG: Parsing customer file
-[2014-01-30 11:28:12,670] INFO: *****Initialize PushService daemon*****
-[2014-01-30 11:28:12,671] ERROR: could not open yaml file, check if it is present. Error was : 
-Address already in use
-[2014-01-30 11:28:56,253] INFO: *****Initialize PushService daemon*****
-[2014-01-30 11:28:56,254] DEBUG: Parsing customer file
-[2014-01-30 11:28:56,256] INFO: *****Launching PushService daemon*****
-[2014-01-30 11:31:29,593] INFO: *****Initialize PushService daemon*****
-[2014-01-30 11:31:29,594] DEBUG: Parsing customer file
-[2014-01-30 11:31:29,595] INFO: *****Launching PushService daemon*****
-[2014-01-30 11:38:51,831] INFO: *****Initialize PushService daemon*****
-[2014-01-30 11:38:51,832] DEBUG: Parsing customer file
-[2014-01-30 11:38:51,833] INFO: *****Launching PushService daemon*****
-[2014-01-30 11:50:01,053] INFO: *****Initialize PushService daemon*****
-[2014-01-30 11:50:01,054] DEBUG: Parsing customer file
-[2014-01-30 11:50:01,056] INFO: *****Launching PushService daemon*****
-[2014-01-30 11:51:06,651] INFO: *****Initialize PushService daemon*****
-[2014-01-30 11:51:06,652] DEBUG: Parsing customer file
-[2014-01-30 11:51:06,653] INFO: *****Launching PushService daemon*****
-[2014-01-30 11:54:43,726] INFO: *****Initialize PushService daemon*****
-[2014-01-30 11:54:43,728] DEBUG: Parsing customer file
-[2014-01-30 11:54:43,729] INFO: *****Launching PushService daemon*****
-[2014-01-30 11:56:14,125] INFO: *****Initialize PushService daemon*****
-[2014-01-30 11:56:14,126] DEBUG: Parsing customer file
-[2014-01-30 11:56:14,127] INFO: *****Launching PushService daemon*****
-[2014-01-30 11:58:43,429] INFO: *****Initialize PushService daemon*****
-[2014-01-30 11:58:43,430] DEBUG: Parsing customer file
-[2014-01-30 11:58:43,434] INFO: *****Launching PushService daemon*****
-[2014-01-30 11:59:00,894] INFO: Received request : push .txt files for "siclic"
-[2014-01-30 11:59:00,895] ERROR: Error, not any customer config found for "siclic"
-[2014-01-30 11:59:19,726] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-30 11:59:19,726] INFO: Trying to export files for "pontlabbe2"
-[2014-01-30 11:59:19,726] DEBUG: Execute command : "scp -v ~/repositories/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-30 11:59:25,237] INFO: Success
-[2014-01-30 11:59:25,238] DEBUG: 
-[2014-01-30 12:30:08,897] INFO: *****Initialize PushService daemon*****
-[2014-01-30 12:30:08,898] DEBUG: Parsing customer file
-[2014-01-30 12:30:08,900] INFO: *****Launching PushService daemon*****
-[2014-01-30 12:30:52,595] INFO: Received request : push .txt files for "test"
-[2014-01-30 12:30:52,595] ERROR: Error, not any customer config found for "test"
-[2014-01-30 12:32:50,034] INFO: *****Initialize PushService daemon*****
-[2014-01-30 12:32:50,035] DEBUG: Parsing customer file
-[2014-01-30 12:32:50,037] INFO: *****Launching PushService daemon*****
-[2014-01-30 12:33:26,914] INFO: Received request : push .txt files for "test"
-[2014-01-30 12:33:26,914] ERROR: Error, not any customer config found for "test"
-[2014-01-30 12:33:41,336] INFO: Received request : push .txt files for "test2"
-[2014-01-30 12:33:41,337] ERROR: Error, not any customer config found for "test2"
-[2014-01-30 13:43:51,794] INFO: *****Initialize PushService daemon*****
-[2014-01-30 13:43:51,795] DEBUG: Parsing customer file
-[2014-01-30 13:43:51,797] INFO: *****Launching PushService daemon*****
-[2014-01-30 13:44:00,231] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-30 13:44:00,231] INFO: Trying to export files for "pontlabbe2"
-[2014-01-30 13:44:00,231] DEBUG: Execute command : "scp -v ~/repositories/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-30 13:44:02,339] INFO: Success
-[2014-01-30 14:46:04,181] INFO: *****Initialize PushService daemon*****
-[2014-01-30 14:46:04,182] DEBUG: Parsing customer file
-[2014-01-30 15:12:08,690] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:13:10,301] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:14:42,045] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:21:55,226] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:21:55,227] DEBUG: Parsing customer file
-[2014-01-30 15:23:06,914] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:23:06,915] DEBUG: Parsing customer file
-[2014-01-30 15:23:39,275] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:23:50,917] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:23:58,795] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:28:48,221] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:28:48,222] DEBUG: Parsing customer file
-[2014-01-30 15:28:48,236] INFO: *****Launching PushService daemon*****
-[2014-01-30 15:28:58,337] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:29:11,306] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:31:17,728] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:31:17,729] DEBUG: Parsing customer file
-[2014-01-30 15:31:17,741] INFO: *****Launching PushService daemon*****
-[2014-01-30 15:31:58,912] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-01-30 15:31:58,912] INFO: Trying to export files for "pontlabbe2"
-[2014-01-30 15:31:58,912] DEBUG: Execute command : "scp -v ~/repositories/pontlabbe2/*.txt siclic_export_test@ostc-dev.siclic.fr:~/test_ciril_export"
-[2014-01-30 15:32:01,106] INFO: Success
-[2014-01-30 15:37:49,348] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:37:49,349] DEBUG: Parsing customer file
-[2014-01-30 15:37:49,364] INFO: *****Launching PushService daemon*****
-[2014-01-30 15:38:06,271] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:44:27,118] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:44:41,662] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:45:26,186] INFO: *****Initialize PushService daemon*****
-[2014-01-30 15:45:26,187] DEBUG: Parsing customer file
-[2014-01-30 15:45:26,201] INFO: *****Launching PushService daemon*****
-[2014-01-30 16:18:14,649] INFO: *****Initialize PushService daemon*****
-[2014-01-30 16:18:14,650] DEBUG: Parsing customer file
-[2014-01-30 16:19:22,192] INFO: *****Initialize PushService daemon*****
-[2014-01-30 16:19:22,193] DEBUG: Parsing customer file
-[2014-01-30 16:20:56,467] INFO: *****Initialize PushService daemon*****
-[2014-01-30 16:20:56,468] DEBUG: Parsing customer file
-[2014-01-30 16:22:36,015] INFO: *****Initialize PushService daemon*****
-[2014-01-30 16:22:36,016] DEBUG: Parsing customer file
-[2014-01-30 16:31:06,438] INFO: *****Initialize PushService daemon*****
-[2014-01-30 16:31:06,439] DEBUG: Parsing customer file
-[2014-01-30 16:56:36,114] INFO: *****Initialize PushService daemon*****
-[2014-01-30 16:56:36,115] DEBUG: Parsing customer file
-[2014-01-30 16:56:36,129] INFO: *****Launching PushService daemon*****
-[2014-01-30 16:59:04,738] INFO: *****Initialize PushService daemon*****
-[2014-01-30 16:59:04,739] DEBUG: Parsing customer file
-[2014-01-30 16:59:04,754] INFO: *****Launching PushService daemon*****
-[2014-01-30 17:03:17,987] INFO: *****Initialize PushService daemon*****
-[2014-01-30 17:03:17,988] DEBUG: Parsing customer file
-[2014-01-30 17:03:18,002] INFO: *****Launching PushService daemon*****
-[2014-01-30 17:04:42,618] INFO: *****Initialize PushService daemon*****
-[2014-01-30 17:04:42,619] DEBUG: Parsing customer file
-[2014-01-30 17:04:42,633] DEBUG: store PID 15136
-[2014-01-30 17:04:42,634] INFO: *****Launching PushService daemon*****
-[2014-01-30 17:38:34,958] INFO: *****Initialize PushService daemon*****
-[2014-01-30 17:38:34,959] DEBUG: Parsing customer file
-[2014-01-30 17:38:34,972] DEBUG: store PID 15704
-[2014-01-30 17:38:34,972] INFO: *****Launching PushService daemon*****
-[2014-01-30 17:44:26,413] INFO: *****Initialize PushService daemon*****
-[2014-01-30 17:44:26,414] DEBUG: Parsing customer file
-[2014-01-30 17:44:26,416] DEBUG: store PID 15836
-[2014-01-30 17:44:26,429] INFO: *****Launching PushService daemon*****
-[2014-01-30 17:46:04,144] INFO: *****Initialize PushService daemon*****
-[2014-01-30 17:46:47,151] INFO: *****Initialize PushService daemon*****
-[2014-01-30 17:46:47,152] DEBUG: Parsing customer file
-[2014-01-30 17:46:47,154] DEBUG: store PID 15923
-[2014-01-30 17:46:47,167] INFO: *****Launching PushService daemon*****
-[2014-01-30 18:01:01,525] INFO: *****Initialize PushService daemon*****
-[2014-01-30 18:01:01,526] DEBUG: Parsing customer file
-[2014-01-30 18:01:01,527] DEBUG: store PID 16383
-[2014-01-30 18:01:01,540] INFO: *****Launching PushService daemon*****
-[2014-01-30 18:01:34,644] INFO: *****Initialize PushService daemon*****
-[2014-01-30 18:01:40,915] INFO: *****Initialize PushService daemon*****
-[2014-01-31 09:20:40,235] INFO: *****Initialize PushService daemon*****
-[2014-01-31 09:20:40,245] DEBUG: Parsing customer file
-[2014-01-31 09:29:08,301] INFO: *****Initialize PushService daemon*****
-[2014-01-31 09:29:08,302] DEBUG: Parsing customer file
-[2014-01-31 10:18:52,984] INFO: *****Initialize PushService daemon*****
-[2014-01-31 10:18:52,985] DEBUG: Parsing customer file
-[2014-01-31 10:18:52,997] INFO: *****Launching PushService daemon*****
-[2014-01-31 10:19:30,527] INFO: *****Initialize PushService daemon*****
-[2014-01-31 10:20:56,349] INFO: *****Initialize PushService daemon*****
-[2014-01-31 10:20:56,350] DEBUG: Parsing customer file
-[2014-01-31 10:21:16,687] INFO: *****Initialize PushService daemon*****
-[2014-01-31 10:21:16,688] DEBUG: Parsing customer file
-[2014-01-31 10:21:16,702] INFO: *****Launching PushService daemon*****
-[2014-01-31 10:28:11,529] INFO: *****Initialize PushService daemon*****
-[2014-01-31 10:28:11,530] DEBUG: Parsing customer file
-[2014-01-31 10:33:50,904] INFO: *****Initialize PushService daemon*****
-[2014-01-31 10:33:50,905] DEBUG: Parsing customer file
-[2014-01-31 10:34:19,726] INFO: *****Initialize PushService daemon*****
-[2014-01-31 10:34:19,727] DEBUG: Parsing customer file
-[2014-01-31 10:34:19,738] INFO: *****Launching PushService daemon*****
-[2014-01-31 10:48:37,771] INFO: *****Initialize PushService daemon*****
-[2014-01-31 10:48:56,707] INFO: *****Initialize PushService daemon*****
-[2014-01-31 10:48:56,708] DEBUG: Parsing customer file
-[2014-01-31 10:48:56,721] INFO: *****Launching PushService daemon*****
-[2014-01-31 10:49:27,777] INFO: *****Initialize PushService daemon*****
-[2014-01-31 10:49:27,778] DEBUG: Parsing customer file
-[2014-01-31 10:49:27,790] INFO: *****Launching PushService daemon*****
-[2014-01-31 10:51:48,531] INFO: *****Initialize PushService daemon*****
-[2014-01-31 10:51:48,532] DEBUG: Parsing customer file
-[2014-01-31 10:52:28,962] INFO: *****Initialize PushService daemon*****
-[2014-01-31 10:52:28,963] DEBUG: Parsing customer file
-[2014-01-31 10:52:28,975] INFO: *****Launching PushService daemon*****
-[2014-01-31 10:56:21,886] INFO: *****Initialize PushService daemon*****
-[2014-01-31 10:56:21,887] DEBUG: Parsing customer file
-[2014-01-31 10:56:21,899] INFO: *****Launching PushService daemon*****
-[2014-01-31 11:08:38,836] INFO: *****Initialize PushService daemon*****
-[2014-01-31 11:08:38,837] DEBUG: Parsing customer file
-[2014-01-31 11:08:38,850] INFO: *****Launching PushService daemon*****
-[2014-01-31 11:09:16,695] INFO: *****Initialize PushService daemon*****
-[2014-01-31 11:09:16,696] DEBUG: Parsing customer file
-[2014-01-31 11:09:16,711] INFO: *****Launching PushService daemon*****
-[2014-01-31 11:10:53,828] INFO: *****Initialize PushService daemon*****
-[2014-01-31 11:10:53,829] DEBUG: Parsing customer file
-[2014-01-31 11:10:53,845] INFO: *****Launching PushService daemon*****
-[2014-01-31 11:11:12,233] INFO: *****Initialize PushService daemon*****
-[2014-01-31 11:11:12,233] DEBUG: Parsing customer file
-[2014-01-31 11:11:12,247] INFO: *****Launching PushService daemon*****
-[2014-01-31 11:16:42,216] INFO: *****Initialize PushService daemon*****
-[2014-01-31 11:16:56,988] INFO: *****Initialize PushService daemon*****
-[2014-01-31 11:16:56,989] DEBUG: Parsing customer file
-[2014-01-31 11:16:56,991] INFO: *****Launching PushService daemon*****
-[2014-01-31 11:17:15,734] INFO: *****Initialize PushService daemon*****
-[2014-01-31 11:17:15,735] DEBUG: Parsing customer file
-[2014-01-31 11:17:15,736] INFO: *****Launching PushService daemon*****
-[2014-01-31 11:18:43,951] INFO: *****Initialize PushService daemon*****
-[2014-01-31 11:18:43,952] DEBUG: Parsing customer file
-[2014-01-31 11:18:43,953] INFO: *****Launching PushService daemon*****
-[2014-01-31 11:20:33,521] INFO: Received request : push .txt files for "test"
-[2014-01-31 11:20:33,521] ERROR: Error, not any customer config found for "test"
+[2014-02-03 12:50:04,025] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-02-03 12:50:04,026] INFO: Trying to export files for "pontlabbe2"
+[2014-02-03 12:50:04,026] DEBUG: Execute command : "scp -v repositories/pontlabbe2/todo/BC-VOI_2013-07-26_0027.txt repositories/pontlabbe2/todo/export2.txt repositories/pontlabbe2/todo/export1.txt nonow@localhost:~/test_ciril_export"
+[2014-02-03 12:50:04,096] ERROR: Executing: program /usr/bin/ssh host localhost, user nonow, command scp -v -d -t ~/test_ciril_export
+OpenSSH_6.0p1 Debian-3ubuntu1, OpenSSL 1.0.1c 10 May 2012
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: Connecting to localhost [127.0.0.1] port 22.
+debug1: Connection established.
+debug1: identity file /srv/openerp/push_service/.ssh/id_rsa type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_rsa-cert type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_dsa type 2
+debug1: Checking blacklist file /usr/share/ssh/blacklist.DSA-1024
+debug1: Checking blacklist file /etc/ssh/blacklist.DSA-1024
+debug1: identity file /srv/openerp/push_service/.ssh/id_dsa-cert type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_ecdsa type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_ecdsa-cert type -1
+debug1: Remote protocol version 2.0, remote software version OpenSSH_6.0p1 Debian-3ubuntu1
+debug1: match: OpenSSH_6.0p1 Debian-3ubuntu1 pat OpenSSH*
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_6.0p1 Debian-3ubuntu1
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: server->client aes128-ctr hmac-md5 none
+debug1: kex: client->server aes128-ctr hmac-md5 none
+debug1: sending SSH2_MSG_KEX_ECDH_INIT
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ECDSA 54:d0:b6:2e:e5:64:aa:0e:ff:06:7e:f8:ea:cc:57:70
+debug1: Host 'localhost' is known and matches the ECDSA host key.
+debug1: Found key in /srv/openerp/push_service/.ssh/known_hosts:3
+debug1: ssh_ecdsa_verify: signature correct
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: Roaming not allowed by server
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey,password
+debug1: Next authentication method: publickey
+debug1: Trying private key: /srv/openerp/push_service/.ssh/id_rsa
+debug1: Offering DSA public key: /srv/openerp/push_service/.ssh/id_dsa
+debug1: Authentications that can continue: publickey,password
+debug1: Trying private key: /srv/openerp/push_service/.ssh/id_ecdsa
+debug1: Next authentication method: password
+debug1: Authentications that can continue: publickey,password
+Permission denied, please try again.
+debug1: Authentications that can continue: publickey,password
+Permission denied, please try again.
+debug1: Authentications that can continue: publickey,password
+debug1: No more authentication methods to try.
+Permission denied (publickey,password).
+lost connection
+
+[2014-02-03 12:50:59,587] INFO: *****Initialize PushService daemon*****
+[2014-02-03 12:50:59,588] DEBUG: *****Parsing customer file*****
+[2014-02-03 12:50:59,589] INFO: *****Launching PushService daemon*****
+[2014-02-03 12:51:03,972] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-02-03 12:51:03,972] INFO: Trying to export files for "pontlabbe2"
+[2014-02-03 12:51:03,972] DEBUG: Execute command : "scp -v repositories/pontlabbe2/todo/BC-VOI_2013-07-26_0027.txt repositories/pontlabbe2/todo/export2.txt repositories/pontlabbe2/todo/export1.txt nonow@localhost:~/test_ciril_export"
+[2014-02-03 12:51:04,030] ERROR: Executing: program /usr/bin/ssh host localhost, user nonow, command scp -v -d -t ~/test_ciril_export
+OpenSSH_6.0p1 Debian-3ubuntu1, OpenSSL 1.0.1c 10 May 2012
+debug1: Reading configuration data /etc/ssh/ssh_config
+debug1: /etc/ssh/ssh_config line 19: Applying options for *
+debug1: Connecting to localhost [127.0.0.1] port 22.
+debug1: Connection established.
+debug1: identity file /srv/openerp/push_service/.ssh/id_rsa type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_rsa-cert type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_dsa type 2
+debug1: Checking blacklist file /usr/share/ssh/blacklist.DSA-1024
+debug1: Checking blacklist file /etc/ssh/blacklist.DSA-1024
+debug1: identity file /srv/openerp/push_service/.ssh/id_dsa-cert type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_ecdsa type -1
+debug1: identity file /srv/openerp/push_service/.ssh/id_ecdsa-cert type -1
+debug1: Remote protocol version 2.0, remote software version OpenSSH_6.0p1 Debian-3ubuntu1
+debug1: match: OpenSSH_6.0p1 Debian-3ubuntu1 pat OpenSSH*
+debug1: Enabling compatibility mode for protocol 2.0
+debug1: Local version string SSH-2.0-OpenSSH_6.0p1 Debian-3ubuntu1
+debug1: SSH2_MSG_KEXINIT sent
+debug1: SSH2_MSG_KEXINIT received
+debug1: kex: server->client aes128-ctr hmac-md5 none
+debug1: kex: client->server aes128-ctr hmac-md5 none
+debug1: sending SSH2_MSG_KEX_ECDH_INIT
+debug1: expecting SSH2_MSG_KEX_ECDH_REPLY
+debug1: Server host key: ECDSA 54:d0:b6:2e:e5:64:aa:0e:ff:06:7e:f8:ea:cc:57:70
+debug1: Host 'localhost' is known and matches the ECDSA host key.
+debug1: Found key in /srv/openerp/push_service/.ssh/known_hosts:3
+debug1: ssh_ecdsa_verify: signature correct
+debug1: SSH2_MSG_NEWKEYS sent
+debug1: expecting SSH2_MSG_NEWKEYS
+debug1: SSH2_MSG_NEWKEYS received
+debug1: Roaming not allowed by server
+debug1: SSH2_MSG_SERVICE_REQUEST sent
+debug1: SSH2_MSG_SERVICE_ACCEPT received
+debug1: Authentications that can continue: publickey,password
+debug1: Next authentication method: publickey
+debug1: Trying private key: /srv/openerp/push_service/.ssh/id_rsa
+debug1: Offering DSA public key: /srv/openerp/push_service/.ssh/id_dsa
+debug1: Authentications that can continue: publickey,password
+debug1: Trying private key: /srv/openerp/push_service/.ssh/id_ecdsa
+debug1: Next authentication method: password
+debug1: Authentications that can continue: publickey,password
+Permission denied, please try again.
+debug1: Authentications that can continue: publickey,password
+Permission denied, please try again.
+debug1: Authentications that can continue: publickey,password
+debug1: No more authentication methods to try.
+Permission denied (publickey,password).
+lost connection
+
+[2014-02-03 12:59:09,355] INFO: Received request : push .txt files for "pontlabbe2"
+[2014-02-03 12:59:09,355] INFO: Trying to export files for "pontlabbe2"
+[2014-02-03 12:59:09,355] DEBUG: Execute command : "scp -v repositories/pontlabbe2/todo/BC-VOI_2013-07-26_0027.txt repositories/pontlabbe2/todo/export2.txt repositories/pontlabbe2/todo/export1.txt nonow@localhost:~/test_ciril_export"
+[2014-02-03 12:59:09,584] INFO: Success

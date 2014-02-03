@@ -7,7 +7,7 @@ import logging
 from logging.config import dictConfig
 import os
 from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer 
-
+import shutil
 
 config_path = './config.yml'
 logging_config_path = './logging_config.yml'
@@ -30,19 +30,29 @@ class PushServiceHandler(BaseHTTPRequestHandler):
         myLogger.info('Received request : push .txt files for "%s"' % db)
         customer = customer_config.get(db, None)
         if customer:
+            #initialize paths according to customers.yml
             host = customer.get('host','')
             username = customer.get('username','')
             path = customer.get('path','')
-            local_path = '%s/%s/*.txt' % ('~/repositories',db)
-            cmd = ' '.join(['scp','-v',local_path, '%s@%s:%s' % (username,host,path)])
+            base_path = '%s/%s' % ('repositories',db)
+            #get of all .txt files to export (store them to be able to treat only those found at execution of this script,
+            #to avoid conflict when a file is added between scp and mv shell commands)
+            local_path = '%s/todo' % (base_path,)
+            files = ['%s/%s' % (local_path,f) for f in os.listdir(local_path)]
+            #build shell command as string
+            cmd = ' '.join(['scp','-v',' '.join(files), '%s@%s:%s' % (username,host,path)])
             myLogger.info('Trying to export files for "%s"' % db)
             myLogger.debug('Execute command : "%s"' % cmd)
+            #process the cmd into shell context
             process = subprocess.Popen(cmd,shell=True,stderr=subprocess.PIPE,stdout=subprocess.PIPE)
             if process.wait() != 0:
                 myLogger.error(process.communicate()[1])
                 self.send_error(500, message="Internal error when sending files by ssh")
             else:
+                #scp worked, return code 200 to client and mv all .txt files to archive directory
                 myLogger.info("Success")
+                for f in files:
+                    shutil.move(f, base_path + '/archive')
                 self.send_response(200)
         else:
             myLogger.error('Error, not any customer config found for "%s"' % db)
