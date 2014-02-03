@@ -35,8 +35,6 @@ class PushServiceHandler(BaseHTTPRequestHandler):
             username = customer.get('username','')
             path = customer.get('path','')
             base_path = '%s/%s' % ('repositories',db)
-            #get of all .txt files to export (store them to be able to treat only those found at execution of this script,
-            #to avoid conflict when a file is added between scp and mv shell commands)
             local_path = '%s/todo' % (base_path,)
             files = ['%s/%s' % (local_path,f) for f in os.listdir(local_path)]
             #build shell command as string
@@ -49,10 +47,7 @@ class PushServiceHandler(BaseHTTPRequestHandler):
                 myLogger.error(process.communicate()[1])
                 self.send_error(500, message="Internal error when sending files by ssh")
             else:
-                #scp worked, return code 200 to client and mv all .txt files to archive directory
                 myLogger.info("Success")
-                for f in files:
-                    shutil.move(f, base_path + '/archive')
                 self.send_response(200)
         else:
             myLogger.error('Error, not any customer config found for "%s"' % db)
