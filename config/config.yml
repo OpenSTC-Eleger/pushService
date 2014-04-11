@@ -1,0 +1,2 @@
+bind-address: localhost
+port: 44001

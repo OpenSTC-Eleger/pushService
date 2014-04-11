@@ -1,0 +1,5 @@
+bind-address: 0.0.0.0
+port: 44001
+customer-repo-dir: /ciril
+customer-conf-dir: /data/config
+customer-keys-dir: /data/keys

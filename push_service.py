@@ -27,38 +27,60 @@ import os
 from BaseHTTPServer import BaseHTTPRequestHandler,HTTPServer 
 import shutil
 
-config_path = './config.yml'
-logging_config_path = './logging_config.yml'
-customer_file_path = './customer.yml'
-customer_config = {}
+script_dir = os.path.dirname(os.path.realpath(__file__))
+config_path = '{}/config/config.yml'.format(script_dir)
+logging_config_path = '{}/config/logging_config.yml'.format(script_dir)
 
 class PushServiceHandler(BaseHTTPRequestHandler):
-    
+
     def do_GET(self):
         path = self.path.split('/')
         if len(path) > 2:
             if 'push_service' == path[1]:
                 self.push(path[2])
+            elif 'create_customer' == path[1]:
+                self.create(path[2])
             else:
-                self.send_error(404, 'resource "%s" not found' % path[1])
+                self.send_error(404, 'resource "{}" not found'.format(path[1]))
         else:
-            self.send_error(400, message='You must provide at least one resource (push_service for example) and one target (siclic for example) separated by a slash')
+            self.send_error(400, message='You must provide at least one resource (ex: push_service, create_customer) and one target (siclic for example) separated by a slash')
     
+    def create(self, name):
+        myLogger.info('Creating new customer "{}"'.format(name))
+        cust_dir = '{path}/{name}'.format(path=customer_conf_dir,name=name)
+        try:
+            if not os.path.isdir(cust_dir):
+                os.makedirs('{}/todo'.format(cust_dir), 0750)
+                os.makedirs('{}/archive'.format(cust_dir), 0750)
+            else:
+                myLogger.info('Customer directory "{}" already exists'.format(name))
+                self.send_error(400, 'Customer "{}" already exists'.format(name))
+        except:
+            myLogger.info('Failed creating customer "{}" !!!'.format(name))
+            self.send_error(400, 'Could not create customer "{}"'.format(name))
+
     def push(self, db):
-        myLogger.info('Received request : push .txt files for "%s"' % db)
-        customer = customer_config.get(db, None)
+        myLogger.info('Received request : push .txt files for "{}"'.format(db))
+        customer_conf = '{confdir}/{name}.yml'.format(confdir=customer_conf_dir,name=db)
+        customer_key = '{confdir}/{name}'.format(confdir=customer_keys_dir,name=db)
+        if not os.path.isfile(customer_conf):
+            self.send_error(404, 'Could not find customer YAML config file "{}"'.format(customer_conf))
+        if not os.path.isfile(customer_key):
+            self.send_error(404, 'Could not load customer SSH key "{}"'.format(customer_key))
+        myLogger.info('Fetching config from {}'.format(customer_conf))
+        customer = yaml.load(open(customer_conf), 'r'))
         if customer:
             #initialize paths according to customers.yml
             host = customer.get('host','')
             username = customer.get('username','')
             path = customer.get('path','')
-            base_path = '%s/%s' % ('repositories',db)
-            local_path = '%s/todo' % (base_path,)
-            files = ['%s/%s' % (local_path,f) for f in os.listdir(local_path)]
+            base_path = '{repo_dir}/{name}'.format(repo_dir=customer_repo_dir,name=db)
+            local_path = '{}/todo'.format(base_path)
+            files = ['{path}/{f}'.format(path=local_path,f=f) for f in os.listdir(local_path)]
             #build shell command as string
-            cmd = ' '.join(['scp','-v',' '.join(files), '%s@%s:%s' % (username,host,path)])
-            myLogger.info('Trying to export files for "%s"' % db)
-            myLogger.debug('Execute command : "%s"' % cmd)
+            cmd = ' '.join(['scp','-v','-i',customer_key,' '.join(files), '{user}@{host}:{path}'.format(user=username,host=host,path=path)])
+            myLogger.info('Trying to export files for "{}"'.format(db))
+            myLogger.debug('Execute command : "{}"'.format(cmd))
             #process the cmd into shell context
             process = subprocess.Popen(cmd,shell=True,stderr=subprocess.PIPE,stdout=subprocess.PIPE)
             if process.wait() != 0:
@@ -68,26 +90,28 @@ class PushServiceHandler(BaseHTTPRequestHandler):
                 myLogger.info("Success")
                 self.send_response(200)
         else:
-            myLogger.error('Error, not any customer config found for "%s"' % db)
-            self.send_error(404, message='Not any customer repository found for "%s"' % db)
+            myLogger.error('Error, not any customer config found for "{}"'.format(db))
+            self.send_error(404, message='Not any customer repository found for "{}"'format(db))
 
 #first, initialize logging configuration
-logging_config_file = open(logging_config_path, 'r')
-dictConfig(yaml.load(logging_config_file))
+dictConfig(yaml.load(open(logging_config_path, 'r'))
 myLogger = logging.getLogger()
-myLogger.info('*****Initialize PushService daemon*****')
-
-#then, initialize HTTP server
-config = yaml.load(open(config_path, 'r'))
-server = HTTPServer((config.get('servername',''),config.get('port','')), PushServiceHandler)
 
 #and initialize customer configuration
-myLogger.debug('*****Parsing customer file*****')
-customer_file = open(customer_file_path)
-customer_config = yaml.load(customer_file)
+myLogger.info('*****Loading config*****')
+config = yaml.load(open(config_path, 'r'))
+customer_conf_dir = config.get('customer-conf-dir','{}/customers/config'.format(script_dir))
+customer_keys_dir = config.get('customer-keys-dir','{}/customers/keys'.format(script_dir))
+customer_repo_dir = config.get('customer-repo-dir','{}/customers/repositories'.format(script_dir))
+for cust_dir in [customer_conf_dir, customer_keys_dir, customer_repo_dir]:
+    if not os.path.isdir(cust_dir): os.makedirs(cust_dir, 0755)
+
+#then, initialize HTTP server
+myLogger.info('*****Initializing PushService daemon*****')
+server = HTTPServer((config.get('bind-address',''),config.get('port','')), PushServiceHandler)
 
 #I write PID on the .pid file to be usable as service
-pidfile = open('/var/run/pushService.pid', 'w')
+pidfile = open('{}/run/pushService.pid'.format(script_dir), 'w')
 pidfile.write(str(os.getpid()))
 pidfile.close()
 myLogger.info('*****Launching PushService daemon*****')
