@@ -24,4 +24,6 @@ ADD push_service.py /srv/pushservice/push_service.py
 
 EXPOSE 44001
 
+WORKDIR /srv/pushservice
+
 CMD python /srv/pushservice/push_service.py
