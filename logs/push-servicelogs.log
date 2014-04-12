@@ -1,7 +1,5 @@
-[2014-02-18 15:51:59,544] INFO: *****Initialize PushService daemon*****
-[2014-02-18 15:51:59,555] DEBUG: *****Parsing customer file*****
-[2014-02-18 15:51:59,561] INFO: *****Launching PushService daemon*****
-[2014-02-18 15:52:02,311] INFO: Received request : push .txt files for "pontlabbe2"
-[2014-02-18 15:52:02,312] INFO: Trying to export files for "pontlabbe2"
-[2014-02-18 15:52:02,312] DEBUG: Execute command : "scp -v repositories/pontlabbe2/todo/BC-VOI_2013-07-26_0027.txt repositories/pontlabbe2/todo/BC-VOI_2013-07-09_0018.txt nonow@localhost:~/test_ciril_export"
-[2014-02-18 15:52:05,123] INFO: Success
+[2014-04-12 17:40:11,102] INFO: *****Loading config*****
+[2014-04-12 17:40:11,103] INFO: *****Initializing PushService daemon*****
+[2014-04-12 17:40:27,758] INFO: *****Loading config*****
+[2014-04-12 17:40:27,759] INFO: *****Initializing PushService daemon*****
+[2014-04-12 17:40:27,759] INFO: *****Launching PushService daemon*****

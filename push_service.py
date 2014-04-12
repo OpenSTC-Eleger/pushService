@@ -68,7 +68,7 @@ class PushServiceHandler(BaseHTTPRequestHandler):
         if not os.path.isfile(customer_key):
             self.send_error(404, 'Could not load customer SSH key "{}"'.format(customer_key))
         myLogger.info('Fetching config from {}'.format(customer_conf))
-        customer = yaml.load(open(customer_conf), 'r'))
+        customer = yaml.load(open(customer_conf, 'r'))
         if customer:
             #initialize paths according to customers.yml
             host = customer.get('host','')
@@ -91,10 +91,10 @@ class PushServiceHandler(BaseHTTPRequestHandler):
                 self.send_response(200)
         else:
             myLogger.error('Error, not any customer config found for "{}"'.format(db))
-            self.send_error(404, message='Not any customer repository found for "{}"'format(db))
+            self.send_error(404, message='Not any customer repository found for "{}"'.format(db))
 
 #first, initialize logging configuration
-dictConfig(yaml.load(open(logging_config_path, 'r'))
+dictConfig(yaml.load(open(logging_config_path, 'r')))
 myLogger = logging.getLogger()
 
 #and initialize customer configuration
