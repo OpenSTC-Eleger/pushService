@@ -94,10 +94,15 @@ class PushServiceHandler(BaseHTTPRequestHandler):
             self.send_error(404, message='Not any customer repository found for "{}"'.format(db))
 
 #first, initialize logging configuration
-dictConfig(yaml.load(open(logging_config_path, 'r')))
+log_conf = yaml.load(open(logging_config_path, 'r'))
+log_file = log_conf.get('handlers')['file']['filename']
+#let's make sure the logfile exists
+open(log_file, 'a').close()
+#and start logging
+dictConfig(log_conf)
 myLogger = logging.getLogger()
 
-#and initialize customer configuration
+#then initialize customer configuration
 myLogger.info('*****Loading config*****')
 config = yaml.load(open(config_path, 'r'))
 customer_conf_dir = config.get('customer-conf-dir','{}/customers/config'.format(script_dir))

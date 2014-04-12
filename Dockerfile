@@ -11,6 +11,7 @@ RUN apt-get -q -y install python-yaml
 
 # Create PushService application dir
 RUN mkdir -p /srv/pushservice/logs
+RUN mkdir -p /srv/pushservice/run
 RUN mkdir -p /srv/pushservice/config
 RUN mkdir /data
 RUN mkdir /ciril
