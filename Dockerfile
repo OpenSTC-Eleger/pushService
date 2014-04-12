@@ -19,7 +19,7 @@ VOLUME /ciril
 
 ADD config/config-docker.yml /srv/pushservice/config/config.yml
 ADD config/logging_config.yml /srv/pushservice/config/logging_config.yml
-ADD push_service.py /srv/pushservice.py
+ADD push_service.py /srv/pushservice/push_service.py
 
 EXPOSE 44001
 
